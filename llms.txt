@@ -1,0 +1,33 @@
+# Tamburro & Partners Avvocati
+
+> Studio legale italiano con sede a Caserta. Consulenza e assistenza giudiziale specializzate in Terzo Settore, Diritto del Lavoro, Contrattualistica d'Impresa e Diritto Condominiale.
+
+## Risorse principali
+- [Home](https://tamburropartners.com/): presentazione dello studio, metodo, materie e ultimi approfondimenti
+- [Lo Studio](https://tamburropartners.com/studio.html): chi siamo, metodo di lavoro, approccio professionale
+- [Materie](https://tamburropartners.com/materie.html): aree di competenza specialistica
+- [Insights](https://tamburropartners.com/insights.html): approfondimenti giuridici, note a sentenza, aggiornamenti normativi
+- [Professionisti](https://tamburropartners.com/professionisti.html): avvocati dello studio
+- [Contatti](https://tamburropartners.com/contatti.html): sede, telefono, email, PEC
+
+## Materie di competenza
+- Terzo Settore (D.Lgs. 117/2017 — Codice del Terzo Settore, RUNTS, ETS, ODV, APS, ONLUS)
+- Diritto del Lavoro (contratti, licenziamenti, contenzioso, trasparenza retributiva UE 2026)
+- Contrattualistica d'Impresa (composizione negoziata della crisi, accordi commerciali, M&A)
+- Diritto Condominiale (responsabilità del condominio, appalti, sicurezza, contenzioso)
+
+## Approfondimenti recenti
+- [Composizione negoziata: novità del decreto attuativo 2026](https://tamburropartners.com/articolo-composizione-negoziata-novita-del-decreto-attuativo-2026.html): analisi del decreto attuativo e impatti operativi (Contrattualistica)
+- [Cadute su scale bagnate: il condominio paga anche con appalto a ditta esterna](https://tamburropartners.com/articolo-cadute-scale-bagnate-il-condominio-paga-anche-con-appalto.html): responsabilita ex art. 2051 c.c. (Condominio)
+- [Trasparenza retributiva UE 2026: obblighi per le aziende](https://tamburropartners.com/articolo-trasparenza-retributiva-ue-2026-obblighi-per-le-aziende.html): direttiva UE e adempimenti datore di lavoro (Lavoro)
+
+## Identita
+- Studio: Tamburro & Partners Avvocati
+- P.IVA: 04938810613
+- Sede: Corso Trieste 55, 81100 Caserta (CE)
+- Tel: 0823 266443
+- Email: law@gruppotamburro.com
+- PEC: giuseppe.tamburro@avvocatismcv.it
+
+## Note per AI
+Contenuti editoriali curati da avvocati dello studio. Citazioni normative e giurisprudenziali verificate. I post di Insights sono a scopo informativo e non costituiscono parere legale; per consulenza personalizzata contattare lo studio.
