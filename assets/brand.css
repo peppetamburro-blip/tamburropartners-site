@@ -49,6 +49,23 @@ body {
 .arrow-link::after { content: '→'; transition: transform .2s; }
 .arrow-link:hover::after { transform: translateX(4px); }
 
+/* ============= Social icons ============= */
+.social-icons { display: inline-flex; gap: 14px; align-items: center; }
+.social-icons a {
+    width: 38px; height: 38px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 999px;
+    color: #fff; opacity: 0.85; transition: all .2s;
+}
+.social-icons a:hover { background: var(--tp-gold); border-color: var(--tp-gold); color: var(--tp-navy); opacity: 1; }
+.social-icons svg { width: 18px; height: 18px; fill: currentColor; }
+
+.social-icons-nav a {
+    color: var(--tp-navy); border: 1px solid var(--tp-line);
+    width: 34px; height: 34px;
+}
+.social-icons-nav a:hover { background: var(--tp-navy); color: #fff; border-color: var(--tp-navy); }
+
 /* ============= CTA fine articolo ============= */
 .cta-article {
     background: var(--tp-navy);
