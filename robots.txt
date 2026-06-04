@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/hero/
+Disallow: /CNAME
+
+Sitemap: https://tamburropartners.com/sitemap.xml
