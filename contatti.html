@@ -21,6 +21,10 @@
 <meta name="author" content="Tamburro & Partners Avvocati">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LegalService","name":"Tamburro & Partners Avvocati","url":"https://tamburropartners.com","logo":"https://tamburropartners.com/assets/logo-transparent.png","email":"law@tamburropartners.com","telephone":"+390823266443","address":{"@type":"PostalAddress","streetAddress":"Corso Trieste 55","addressLocality":"Caserta","postalCode":"81100","addressCountry":"IT"},"vatID":"04938810613","areaServed":"IT","priceRange":"EE","sameAs":["https://www.facebook.com/1025530450870193"]}</script>
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2148799795702547');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2148799795702547&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 </head><body>
 
 <header class="border-b line sticky top-0 z-50 bg-[color:var(--tp-paper)]/90 backdrop-blur">
@@ -111,7 +115,7 @@
     fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
       .then(function(r){return r.json().catch(function(){return{ok:false};});})
       .then(function(j){
-        if(j&&j.ok){ show('Grazie, la tua richiesta e stata inviata. Ti risponderemo al piu presto.',true); f.reset(); }
+        if(j&&j.ok){ show('Grazie, la tua richiesta e stata inviata. Ti risponderemo al piu presto.',true); f.reset(); if(window.fbq){fbq('track','Lead');} }
         else { show('Si e verificato un problema nell invio. Riprova o scrivici a law@tamburropartners.com.',false); }
       })
       .catch(function(){ show('Connessione non riuscita. Riprova o scrivici a law@tamburropartners.com.',false); })
