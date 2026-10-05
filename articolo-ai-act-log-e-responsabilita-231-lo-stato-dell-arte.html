@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Act, log e responsabilità 231: lo stato dell'arte — Tamburro & Partners</title>
+<meta name="description" content="AI Act, obblighi di trasparenza e possibili riflessi su responsabilità d'impresa e conservazione dei log: cosa è certo oggi e cosa attende conferma." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/brand.css?v=10">
+<style>
+.prose-tp { font-size: 18px; line-height: 1.75; color: var(--tp-ink); }
+.prose-tp h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; margin: 48px 0 16px; color: var(--tp-navy); letter-spacing: -0.01em; }
+.prose-tp p { margin-bottom: 20px; }
+.prose-tp ol { counter-reset: tpli; margin: 24px 0; }
+.prose-tp ol > li { list-style: none; padding-left: 56px; position: relative; margin-bottom: 24px; }
+.prose-tp ol > li::before { counter-increment: tpli; content: "0" counter(tpli); position: absolute; left: 0; top: 0; font-family: 'Cormorant Garamond', serif; color: var(--tp-gold); font-size: 22px; font-weight: 500; }
+.prose-tp ul { margin: 24px 0; }
+.prose-tp ul > li { list-style: disc; margin-left: 24px; margin-bottom: 12px; }
+.prose-tp strong { color: var(--tp-navy); font-weight: 600; }
+.callout { border-left: 3px solid var(--tp-gold); padding: 14px 22px; background: var(--tp-paper-2); margin: 32px 0; font-size: 15px; }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LegalService","name":"Tamburro & Partners Avvocati","url":"https://tamburropartners.com","logo":"https://tamburropartners.com/assets/logo-transparent.png","email":"law@tamburropartners.com","telephone":"+390823266443","address":{"@type":"PostalAddress","streetAddress":"Corso Trieste 55","addressLocality":"Caserta","postalCode":"81100","addressCountry":"IT"},"vatID":"04938810613","areaServed":"IT","priceRange":"EE","sameAs":["https://www.facebook.com/1025530450870193"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI Act, log e responsabilità 231: lo stato dell'arte","description":"AI Act, obblighi di trasparenza e possibili riflessi su responsabilità d'impresa e conservazione dei log: cosa è certo oggi e cosa attende conferma.","url":"https://tamburropartners.com/articolo-ai-act-log-e-responsabilita-231-lo-stato-dell-arte.html","image":"https://tamburropartners.com/assets/hero/ai-act-log-e-responsabilita-231-lo-stato-dell-arte.png","author":{"@type":"Person","name":"Avv. Giuseppe Tamburro","jobTitle":"Avvocato","worksFor":{"@type":"LegalService","name":"Tamburro & Partners"}},"publisher":{"@type":"Organization","name":"Tamburro & Partners Avvocati","logo":{"@type":"ImageObject","url":"https://tamburropartners.com/assets/logo-transparent.png"}},"inLanguage":"it-IT","isAccessibleForFree":true,"datePublished":"2026-10-05"}</script>
+</head>
+<body>
+<header class="border-b line sticky top-0 z-50 bg-[color:var(--tp-paper)]/90 backdrop-blur">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-32 flex items-center justify-between">
+        <a href="index.html" aria-label="Tamburro & Partners Avvocati"><img src="assets/logo-transparent.png" alt="Tamburro & Partners Avvocati" class="logo-img"></a>
+        <div class="hidden lg:flex items-center gap-7">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="studio.html" class="nav-link">Lo Studio</a>
+            <a href="materie.html" class="nav-link">Materie</a>
+            <a href="insights.html" class="nav-link active">Insights</a>
+            <a href="professionisti.html" class="nav-link">Professionisti</a>
+            <a href="contatti.html" class="nav-link">Contatti</a>
+        </div>
+        <a href="contatti.html" class="btn-primary hidden md:inline-block">Consulenza</a>
+    </nav>
+</header>
+<article>
+    <header class="border-b line">
+        <div class="max-w-3xl mx-auto px-6 lg:px-10 pt-16 pb-12">
+            <div class="mb-6"><a href="insights.html" class="text-sm text-[color:var(--tp-mute)]">← Torna a Insights</a></div>
+            <div class="flex gap-2 mb-6"><span class="tag">diritto_penale</span></div>
+            <h1 class="display text-4xl lg:text-6xl mb-6">AI Act e responsabilità d'impresa: cosa sappiamo e cosa resta da verificare</h1>
+            <p class="text-xl text-[color:var(--tp-ink-2)] leading-relaxed">Circola la notizia di un decreto che introdurrebbe un nuovo reato legato all'intelligenza artificiale, lo inserirebbe nel catalogo 231 e imporrebbe l'esibizione dei log in giudizio. Prima di trarne conseguenze operative occorre distinguere ciò che è diritto vigente da ciò che, allo stato, non risulta verificabile. Facciamo ordine, perché sul punto l'informazione imprecisa è essa stessa un rischio.</p>
+            <div class="mt-8 flex flex-wrap items-center gap-4 text-sm text-[color:var(--tp-mute)] pt-6 border-t line">
+                <span>A cura di <strong class="text-[color:var(--tp-ink)]">Tamburro &amp; Partners Avvocati</strong></span>
+                <span>·</span><span>5 ottobre 2026</span>
+                <span>·</span><span>4 min</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="aspect-[16/9] max-w-5xl mx-auto bg-[color:var(--tp-paper-2)] overflow-hidden mt-10">
+        <img src="assets/hero/ai-act-log-e-responsabilita-231-lo-stato-dell-arte.png" alt="" class="w-full h-full object-cover">
+    </div>
+
+    <div class="max-w-3xl mx-auto px-6 lg:px-10 py-16 prose-tp">
+<h2>Il fatto</h2>
+<p>In questi giorni sono rimbalzate notizie su un presunto decreto legislativo che introdurrebbe un nuovo reato in materia di intelligenza artificiale (indicato come &quot;art. 437-bis c.p.&quot;), lo aggiungerebbe ai reati-presupposto della responsabilità degli enti (un ipotetico &quot;art. 25-vicies&quot; del D.lgs. 231/2001) e detterebbe regole su risarcimento del danno ed esibizione dei log dei sistemi di AI in giudizio.</p>
+<p>Una precisazione doverosa, prima di qualunque consiglio operativo: allo stato delle fonti ufficiali consultabili, <strong>questi riferimenti non risultano verificabili</strong>. Non abbiamo riscontro degli estremi di pubblicazione in Gazzetta Ufficiale di un &quot;D.lgs. 160/2026&quot;, né dell'esistenza di un art. 437-bis c.p. (esiste l'art. 437 c.p., in tema di omissione dolosa di cautele contro infortuni sul lavoro, ma è altra cosa), né di un art. 25-vicies nel catalogo 231.</p>
+<p>Su un tema che tocca il diritto penale e la responsabilità d'impresa, pubblicare come &quot;vigente&quot; una norma non confermata sarebbe scorretto. Trattiamo quindi la vicenda come <strong>scenario di riforma da monitorare</strong>, tenendo separato ciò che è certo da ciò che non lo è.</p>
+<h2>Inquadramento normativo</h2>
+<p>Il quadro europeo di riferimento è il <strong>Regolamento UE 2024/1689 (AI Act)</strong>, già pubblicato e in applicazione progressiva. Tra le disposizioni rilevanti figurano gli <strong>obblighi di trasparenza</strong> per determinati sistemi di AI: l'art. 50 del Regolamento, nella versione consolidata, impone ad esempio di rendere riconoscibili i contenuti generati artificialmente e di informare gli utenti quando interagiscono con un sistema di AI. Si tratta di un riferimento da verificare sempre nella numerazione aggiornata del testo consolidato, perché le versioni linguistiche e le rettifiche possono incidere sulla rubrica degli articoli.</p>
+<p>L'AI Act prevede una <strong>applicazione scaglionata nel tempo</strong>: alcuni obblighi (ad esempio quelli sui sistemi vietati) decorrono prima, quelli sui sistemi ad alto rischio dopo. Eventuali rinvii o adeguamenti europei sulle categorie ad alto rischio <strong>non cancellano</strong> gli obblighi già applicabili secondo il calendario del Regolamento: è questa la distinzione da tenere ferma.</p>
+<p>Sul piano interno, un recepimento con profili penali e in materia di responsabilità 231 è <strong>plausibile e atteso</strong>, ma finché non ne conosciamo numero, data, pubblicazione in G.U. e date di decorrenza dei singoli obblighi, qualsiasi affermazione di operatività sarebbe prematura.</p>
+<h2>Implicazioni pratiche</h2>
+<p>Per imprese, fornitori di AI (anche extra-UE che operano sul mercato europeo) e utilizzatori professionali, il messaggio è duplice.</p>
+<p>Da un lato, gli obblighi <strong>già discendenti dall'AI Act</strong> — in particolare trasparenza, documentazione tecnica e tracciabilità dei sistemi — sono un dato attuale su cui conviene essere allineati a prescindere dalle notizie sul decreto nazionale.</p>
+<p>Dall'altro, l'ipotesi di un nuovo reato-presupposto e di obblighi di esibizione dei log in giudizio, se confermata, sposterebbe il baricentro: la <strong>conservazione e l'integrità dei registri di funzionamento</strong> (log) dei sistemi di AI diventerebbe non solo un tema di compliance, ma un elemento potenzialmente decisivo in sede processuale, sia civile sia penale. Chi non è in grado di ricostruire come il proprio sistema ha operato si espone a svantaggi probatori.</p>
+<h2>Cosa fare in concreto</h2>
+<ol>
+<li><strong>Verificare le fonti prima di decidere.</strong> Non adottare contromisure basate su norme non ancora confermate: attendere gli estremi ufficiali (numero, data, G.U., decorrenze) di qualunque decreto di recepimento.</li>
+<li><strong>Allinearsi fin da ora all'AI Act.</strong> Mappare i sistemi di AI utilizzati o forniti, verificarne la classificazione e dare attuazione agli obblighi di trasparenza già applicabili.</li>
+<li><strong>Impostare una policy di conservazione dei log</strong> dei sistemi di AI: definire cosa registrare, per quanto tempo e con quali garanzie di integrità e immodificabilità, in vista di possibili richieste di esibizione.</li>
+<li><strong>Rivedere il Modello 231</strong>, predisponendo l'analisi di impatto per un eventuale nuovo reato-presupposto in materia di AI, così da poter aggiornare rapidamente la parte speciale quando il quadro sarà certo.</li>
+<li><strong>Presidiare gli aggiornamenti normativi</strong> europei e nazionali, con un referente interno incaricato di segnalare l'entrata in vigore effettiva dei singoli obblighi.</li>
+</ol>
+<p>È opportuno affrontare questi passaggi in modo coordinato tra funzione legale, IT e compliance, evitando interventi frammentari.</p>
+<h2>Disclaimer</h2>
+<p>Contributo informativo a cura di Tamburro &amp; Partners - Avv. Giuseppe Tamburro. Non costituisce parere legale.</p>
+        <div class="callout">
+            <strong>Disclaimer.</strong> Contributo informativo a cura di Tamburro Contributo informativo a cura di Tamburro &amp; Partners Avvocati. Non costituisce parere legale. Partners - Avv. Giuseppe Tamburro. Non costituisce parere legale.
+        </div>
+    </div>
+
+    <section class="cta-article">
+        <div class="max-w-5xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center relative">
+            <div class="lg:col-span-7">
+                <div class="eyebrow gold mb-4">Una conversazione con lo studio</div>
+                <h2 class="display text-3xl lg:text-5xl">Ogni condominio ha una storia <span class="serif italic gold">a sé</span>.</h2>
+                <p class="mt-5 opacity-80 max-w-xl leading-relaxed">Se gestisci un'amministrazione e vuoi un confronto su una specifica questione condominiale, scrivi allo studio. Ti rispondiamo entro un giorno lavorativo.</p>
+                <div class="mt-8"><a href="contatti.html" class="cta-article-btn">Richiedi una consulenza</a></div>
+            </div>
+            <div class="lg:col-span-5">
+                <a href="mailto:law@tamburropartners.com" class="cta-row"><div><div class="lbl mb-1">Email</div><div class="val">law@tamburropartners.com</div></div><span class="opacity-50">→</span></a>
+                <a href="tel:+390823266443" class="cta-row"><div><div class="lbl mb-1">Telefono</div><div class="val">0823 266443</div></div><span class="opacity-50">→</span></a>
+                <a href="contatti.html" class="cta-row"><div><div class="lbl mb-1">Sede</div><div class="val">Corso Trieste 55, Caserta</div></div><span class="opacity-50">→</span></a>
+            </div>
+        </div>
+    </section>
+</article>
+<footer class="navy-bg py-10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 text-sm opacity-70">© 2026 Tamburro &amp; Partners Avvocati · P.IVA 04938810613</div>
+</footer>
+</body></html>
