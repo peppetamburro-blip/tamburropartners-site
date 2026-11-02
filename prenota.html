@@ -70,7 +70,7 @@
 <h2 class="display text-3xl mb-2"><span class="step-n">2</span>Il quesito e i tuoi dati</h2>
 <div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
 <div><label class="eyebrow block mb-2">Materia</label>
-<select name="materia" class="inp"><option>Terzo Settore</option><option>Diritto del Lavoro</option><option>Contrattualistica</option><option>Condominio</option><option>Altro / da definire</option></select></div>
+<select name="materia" class="inp"><option value="" selected disabled>Scegli la materia</option><option>Terzo Settore</option><option>Diritto del Lavoro</option><option>Contrattualistica</option><option>Condominio</option><option>Diritto di Famiglia</option><option>Aste Giudiziarie</option><option>Diritto Penale</option><option>Altro / non so</option></select></div>
 <div><label class="eyebrow block mb-2">Il tuo quesito</label>
 <textarea name="quesito" rows="7" class="inp" placeholder="Racconta i fatti principali, le date importanti e cosa vuoi sapere."></textarea></div>
 <div><label class="eyebrow block mb-2">Controparte (se c'è)</label>
@@ -179,7 +179,7 @@
   $('s2').addEventListener('submit',function(e){
     e.preventDefault();var f=e.target;
     if(!state.slot){show('Scegli prima giorno e orario.');return;}
-    var need=['quesito','nome','cf','indirizzo','email','telefono'];
+    var need=['materia','quesito','nome','cf','indirizzo','email','telefono'];
     for(var i=0;i<need.length;i++){if(!f[need[i]].value.trim()){show('Compila tutti i campi: manca «'+f[need[i]].previousElementSibling.textContent+'».');f[need[i]].focus();return;}}
     if(f.quesito.value.trim().length<30){show('Descrivi il quesito con qualche riga in più.');return;}
     var files=f.documenti.files,tot=0;for(var k=0;k<files.length;k++)tot+=files[k].size;
