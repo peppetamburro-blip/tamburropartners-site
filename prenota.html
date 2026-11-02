@@ -26,6 +26,8 @@
 .step-n{display:inline-flex;width:2rem;height:2rem;border-radius:999px;align-items:center;justify-content:center;border:1px solid currentColor;font-size:.85rem;margin-right:.6rem}
 .locked{opacity:.45;pointer-events:none}
 #msg{display:none;padding:12px 14px;border-radius:2px;font-size:.9rem}
+.slot.urg{border-color:var(--tp-gold,#b9986a);background:#fbf7ee}
+.slot.urg.sel{background:var(--tp-gold,#b9986a);color:var(--tp-ink,#1a1f1c);border-color:var(--tp-gold,#b9986a)}
 .day.full,.slot.busy{opacity:.45;text-decoration:line-through;cursor:not-allowed;background:transparent}
 </style>
 </head><body>
@@ -48,7 +50,7 @@
 <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
 <div class="eyebrow mb-4">Consulenza</div>
 <h1 class="display text-5xl lg:text-6xl max-w-3xl">Trenta minuti con<br><span class="serif italic gold">l'Avv. Giuseppe Tamburro</span>.</h1>
-<p class="mt-6 max-w-2xl text-[color:var(--tp-ink-2)] leading-relaxed">Scegli giorno e orario, descrivi il quesito e allega i documenti: li leggiamo prima della telefonata, così il tempo serve a darti risposte. La consulenza è con l'Avv. Giuseppe Tamburro, dura 30 minuti, al telefono o in videochiamata, e costa <strong>150 €</strong> tutto compreso (IVA e cassa forense incluse), da pagare online con PayPal o carta.</p>
+<p class="mt-6 max-w-2xl text-[color:var(--tp-ink-2)] leading-relaxed">Scegli giorno e orario, descrivi il quesito e allega i documenti: li leggiamo prima della telefonata, così il tempo serve a darti risposte. La consulenza è con l'Avv. Giuseppe Tamburro, dura 30 minuti, al telefono o in videochiamata, e costa <strong>150 €</strong> tutto compreso (IVA e cassa forense incluse), da pagare online con PayPal o carta. Se è urgente, con <strong>250 €</strong> puoi avere un orario già occupato o nelle prossime ore.</p>
 </div></section>
 
 <section class="py-16">
@@ -58,6 +60,7 @@
 <!-- STEP 1 -->
 <div id="s1">
 <h2 class="display text-3xl mb-6"><span class="step-n">1</span>Scegli giorno e orario</h2>
+<label id="urgBox" class="flex items-start gap-3 mb-5 p-4 text-sm" style="border:1px solid var(--tp-gold,#b9986a);background:#fbf7ee;cursor:pointer"><input type="checkbox" id="urgente" class="mt-1"><span><strong>È urgente e non puoi aspettare?</strong> Con la consulenza urgente, a <strong>250 €</strong> tutto compreso, puoi scegliere anche gli orari già occupati e quelli delle prossime ore: l'avvocato sposta i suoi impegni per sentirti.</span></label>
 <div id="days" class="flex flex-wrap gap-2 text-sm">Caricamento disponibilità…</div>
 <div id="times" class="flex flex-wrap gap-2 mt-5"></div>
 </div>
@@ -87,7 +90,7 @@
 <div><label class="eyebrow block mb-2">Come preferisci sentirci</label>
 <div class="flex gap-6 text-sm"><label><input type="radio" name="modalita" value="Telefono" checked> Telefono</label><label><input type="radio" name="modalita" value="Videochiamata"> Videochiamata</label></div></div>
 <div class="flex items-start gap-3 text-sm text-[color:var(--tp-mute)]"><input type="checkbox" class="mt-1" name="privacy"><span>Ho letto l'informativa privacy ex Reg. UE 2016/679 e acconsento al trattamento dei dati e dei documenti per lo svolgimento della consulenza.</span></div>
-<div class="flex items-start gap-3 text-sm text-[color:var(--tp-mute)]"><input type="checkbox" class="mt-1" name="condizioni"><span>Accetto che la consulenza duri 30 minuti al costo di 150 € tutto compreso (IVA e cassa forense incluse), per cui riceverò regolare fattura. Se l'avvocato non può seguire la questione, ad esempio per conflitto di interessi, l'importo viene rimborsato per intero. L'appuntamento si può spostare scrivendo a g.tamburro@tamburropartners.com almeno 24 ore prima.</span></div>
+<div class="flex items-start gap-3 text-sm text-[color:var(--tp-mute)]"><input type="checkbox" class="mt-1" name="condizioni"><span>Accetto che la consulenza duri 30 minuti al costo di 150 € tutto compreso, oppure 250 € se scelgo la consulenza urgente (IVA e cassa forense incluse), per cui riceverò regolare fattura. Se l'avvocato non può seguire la questione, ad esempio per conflitto di interessi, l'importo viene rimborsato per intero. L'appuntamento si può spostare scrivendo a g.tamburro@tamburropartners.com almeno 24 ore prima.</span></div>
 <button type="submit" class="btn-primary">Continua al pagamento</button>
 </form>
 
@@ -114,7 +117,7 @@
 <ol class="text-sm leading-relaxed space-y-3 text-[color:var(--tp-ink-2)]">
 <li><strong>1.</strong> Scegli un orario libero.</li>
 <li><strong>2.</strong> Scrivi il quesito e allega i documenti.</li>
-<li><strong>3.</strong> Paga 150 € con PayPal o carta.</li>
+<li><strong>3.</strong> Paga 150 € con PayPal o carta (250 € se urgente).</li>
 <li><strong>4.</strong> Ricevi la conferma via email; all'orario fissato ti chiamiamo noi.</li>
 </ol>
 <div class="mt-6 pt-6 border-t line text-sm space-y-1">
@@ -141,13 +144,17 @@
   function show(t,ok){msg.style.display=t?'block':'none';msg.textContent=t||'';msg.style.background=ok?'#eef7ee':'#fbeaea';msg.style.color=ok?'#256029':'#8a1f1f';if(t)msg.scrollIntoView({behavior:'smooth',block:'center'});}
   function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
 
+  var URG=false;
+  function price(){return URG?250:150;}
+  function isUrgSlot(){return state.slotUrg;}
   function loadSlots(){
     fetch(API+'/slots',{headers:H}).then(function(r){return r.json()}).then(function(d){
       state.days=d.days||[];var box=$('days');box.innerHTML='';$('times').innerHTML='';state.slot=null;
-      if(!state.days.some(function(x){return !x.full})){box.textContent='Al momento non ci sono orari liberi. Scrivici a g.tamburro@tamburropartners.com.';return;}
+      if(!state.days.some(function(x){return !x.full||(URG&&(x.urg||[]).length)})){box.textContent='Al momento non ci sono orari liberi. Scrivici a g.tamburro@tamburropartners.com.';return;}
       state.days.forEach(function(day){
-        var b=el('button','day'+(day.full?' full':''),day.label.replace(/ \d{4}$/,''));b.type='button';
-        if(day.full){b.disabled=true;b.title='Giornata al completo';box.appendChild(b);return;}
+        var full=URG?!(day.times.length+(day.urg||[]).length):day.full;
+        var b=el('button','day'+(full?' full':''),day.label.replace(/ \d{4}$/,''));b.type='button';
+        if(full){b.disabled=true;b.title='Giornata al completo';box.appendChild(b);return;}
         b.onclick=function(){document.querySelectorAll('.day').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');renderTimes(day);};
         box.appendChild(b);
       });
@@ -155,16 +162,20 @@
   }
   function renderTimes(day){
     var box=$('times');box.innerHTML='';
-    var busy=day.busy||[];
-    day.times.concat(busy).sort().forEach(function(t){
+    var busy=(day.busy||[]).slice(),urg=day.urg||[];
+    if(!URG)busy=busy.concat(urg);
+    day.times.concat(busy,URG?urg:[]).sort().forEach(function(t){
       var b=el('button','slot',t);b.type='button';
       if(busy.indexOf(t)>=0){b.className='slot busy';b.disabled=true;b.title='Già prenotato';box.appendChild(b);return;}
+      var u=urg.indexOf(t)>=0;if(u){b.className='slot urg';b.title='Solo consulenza urgente';}
       b.onclick=function(){document.querySelectorAll('.slot').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');
-        state.slot=day.date+'T'+t;state.label=day.label+', ore '+t;$('s2').classList.remove('locked');show('');};
+        state.slot=day.date+'T'+t;state.slotUrg=u;state.label=day.label+', ore '+t;$('s2').classList.remove('locked');show('');};
       box.appendChild(b);
     });
   }
 
+  $('urgente').addEventListener('change',function(){URG=this.checked;
+    $('s2').classList.add('locked');loadSlots();});
   $('s2').addEventListener('submit',function(e){
     e.preventDefault();var f=e.target;
     if(!state.slot){show('Scegli prima giorno e orario.');return;}
@@ -175,12 +186,12 @@
     if(files.length>5){show('Puoi caricare al massimo 5 documenti.');return;}
     if(tot>15*1024*1024){show('I documenti superano 15 MB complessivi.');return;}
     if(!f.privacy.checked||!f.condizioni.checked){show("Per continuare accetta l'informativa privacy e le condizioni.");return;}
-    var fd=new FormData(f);fd.append('slot',state.slot);
+    var fd=new FormData(f);fd.append('slot',state.slot);if(state.slotUrg)fd.append('urgente','1');
     var btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='Invio in corso…';show('');
     fetch(API+'/start',{method:'POST',headers:H,body:fd}).then(function(r){return r.json()}).then(function(d){
       if(!d.ok){show(d.error||'Errore, riprova.');if(d.slotTaken)loadSlots();return;}
       state.id=d.id;f.classList.add('locked');document.getElementById('s1').classList.add('locked');
-      $('recap').textContent='Consulenza di 30 minuti: '+state.label+' — 150 € tutto compreso. L\'orario resta riservato per 20 minuti.';
+      state.price=state.slotUrg?250:150;$('recap').textContent='Consulenza '+(state.slotUrg?'urgente ':'')+'di 30 minuti: '+state.label+' — '+state.price+' € tutto compreso. L\'orario resta riservato per 20 minuti.';
       $('s3').classList.remove('locked');initPay();$('s3').scrollIntoView({behavior:'smooth'});
     }).catch(function(){show('Connessione non riuscita, riprova.');})
     .finally(function(){btn.disabled=false;btn.textContent='Continua al pagamento';});
@@ -194,7 +205,7 @@
       if(!d.ok){show(d.error||'Pagamento non riuscito.');return;}
       show('');['s1','s2','s3'].forEach(function(x){$(x).style.display='none'});
       $('doneWhen').textContent=d.when;$('done').style.display='block';$('done').scrollIntoView({behavior:'smooth'});
-      if(window.fbq)fbq('track','Purchase',{value:150,currency:'EUR'});
+      if(window.fbq)fbq('track','Purchase',{value:(state.price||150),currency:'EUR'});
     });
   }
   function initPay(){
@@ -202,16 +213,16 @@
       var box=$('pay');box.innerHTML='';
       if(c.mode==='off'){box.textContent='I pagamenti online saranno attivi a breve. Per prenotare scrivici a g.tamburro@tamburropartners.com.';return;}
       if(c.mode==='mock'){
-        var b=el('button','btn-primary','Paga 150 € (TEST simulato)');b.type='button';
+        var b=el('button','btn-primary','Paga '+(state.price||150)+' € (TEST simulato)');b.type='button';
         b.onclick=function(){b.disabled=true;createOrder().then(capture).catch(function(e){show(e.message);b.disabled=false;});};
         box.appendChild(b);return;
       }
       if(c.mode==='standard'){
-        var p=el('button','btn-primary','Paga 150 € con PayPal o carta');p.type='button';
+        var p=el('button','btn-primary','Paga '+(state.price||150)+' € con PayPal o carta');p.type='button';
         var note=el('p','text-xs text-[color:var(--tp-mute)] mt-3','Verrai portato sulla pagina sicura di PayPal. Puoi pagare anche con carta, senza conto PayPal. Al termine tornerai qui per la conferma.');
         p.onclick=function(){p.disabled=true;p.textContent='Apertura di PayPal…';
           post('/order',{id:state.id}).then(function(d){if(!d.ok)throw new Error(d.error);location.href=d.redirect;})
-          .catch(function(e){show(e.message||'Errore, riprova.');p.disabled=false;p.textContent='Paga 150 € con PayPal o carta';});};
+          .catch(function(e){show(e.message||'Errore, riprova.');p.disabled=false;p.textContent='Paga '+(state.price||150)+' € con PayPal o carta';});};
         box.appendChild(p);box.appendChild(note);return;
       }
       var s=document.createElement('script');
@@ -235,7 +246,7 @@
     show('Stiamo ricevendo la conferma del pagamento da PayPal…',true);
     var tries=0;(function poll(){
       fetch(API+'/status?id='+encodeURIComponent(qs.get('id'))).then(function(r){return r.json()}).then(function(d){
-        if(d.status==='pagata'){show('');showDone(d.when);if(window.fbq)fbq('track','Purchase',{value:150,currency:'EUR'});return;}
+        if(d.status==='pagata'){show('');showDone(d.when);if(window.fbq)fbq('track','Purchase',{value:(state.price||150),currency:'EUR'});return;}
         if(++tries<20){setTimeout(poll,3000);return;}
         show('Pagamento ricevuto da PayPal, la conferma arriverà via email entro pochi minuti. Per qualsiasi dubbio scrivici a g.tamburro@tamburropartners.com.',true);
       }).catch(function(){if(++tries<20)setTimeout(poll,3000);});
