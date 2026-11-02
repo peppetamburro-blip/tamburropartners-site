@@ -26,6 +26,7 @@
 .step-n{display:inline-flex;width:2rem;height:2rem;border-radius:999px;align-items:center;justify-content:center;border:1px solid currentColor;font-size:.85rem;margin-right:.6rem}
 .locked{opacity:.45;pointer-events:none}
 #msg{display:none;padding:12px 14px;border-radius:2px;font-size:.9rem}
+.day.full,.slot.busy{opacity:.45;text-decoration:line-through;cursor:not-allowed;background:transparent}
 </style>
 </head><body>
 
@@ -143,9 +144,10 @@
   function loadSlots(){
     fetch(API+'/slots',{headers:H}).then(function(r){return r.json()}).then(function(d){
       state.days=d.days||[];var box=$('days');box.innerHTML='';$('times').innerHTML='';state.slot=null;
-      if(!state.days.length){box.textContent='Al momento non ci sono orari liberi. Scrivici a g.tamburro@tamburropartners.com.';return;}
+      if(!state.days.some(function(x){return !x.full})){box.textContent='Al momento non ci sono orari liberi. Scrivici a g.tamburro@tamburropartners.com.';return;}
       state.days.forEach(function(day){
-        var b=el('button','day',day.label.replace(/ \d{4}$/,''));b.type='button';
+        var b=el('button','day'+(day.full?' full':''),day.label.replace(/ \d{4}$/,''));b.type='button';
+        if(day.full){b.disabled=true;b.title='Giornata al completo';box.appendChild(b);return;}
         b.onclick=function(){document.querySelectorAll('.day').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');renderTimes(day);};
         box.appendChild(b);
       });
@@ -153,8 +155,10 @@
   }
   function renderTimes(day){
     var box=$('times');box.innerHTML='';
-    day.times.forEach(function(t){
+    var busy=day.busy||[];
+    day.times.concat(busy).sort().forEach(function(t){
       var b=el('button','slot',t);b.type='button';
+      if(busy.indexOf(t)>=0){b.className='slot busy';b.disabled=true;b.title='Già prenotato';box.appendChild(b);return;}
       b.onclick=function(){document.querySelectorAll('.slot').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');
         state.slot=day.date+'T'+t;state.label=day.label+', ore '+t;$('s2').classList.remove('locked');show('');};
       box.appendChild(b);
