@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="it"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prenota una consulenza con l'Avv. Giuseppe Tamburro — Tamburro & Partners Avvocati</title>
+<meta name="description" content="Prenota una consulenza di 30 minuti con l'Avv. Giuseppe Tamburro (Tamburro & Partners): scegli l'orario, descrivi il quesito, carica i documenti e paga online.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/assets/brand.css?v=10">
+<link rel="canonical" href="https://tamburropartners.com/prenota.html">
+<meta property="og:title" content="Prenota una consulenza — Tamburro & Partners Avvocati">
+<meta property="og:description" content="Consulenza di 30 minuti, al telefono o in videochiamata. Scegli l'orario, carica i documenti, paga online.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tamburropartners.com/prenota.html">
+<meta property="og:image" content="https://tamburropartners.com/assets/logo.png">
+<meta property="og:locale" content="it_IT">
+<meta name="robots" content="index,follow">
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2148799795702547');fbq('track','PageView');</script>
+<!-- End Meta Pixel -->
+<script defer src="https://stats.tamburropartners.com/script.js" data-website-id="12a92a30-b192-4013-9b92-acfe381c36f9"></script>
+<style>
+.inp{width:100%;background:#fff;border:1px solid var(--tp-line);padding:.75rem 1rem;border-radius:2px}
+.day,.slot{border:1px solid var(--tp-line);background:#fff;padding:.6rem .9rem;border-radius:2px;font-size:.9rem;cursor:pointer;transition:all .15s}
+.day:hover,.slot:hover{border-color:var(--tp-ink,#1a1a1a)}
+.day.sel,.slot.sel{background:var(--tp-navy,#14213d);color:#fff;border-color:var(--tp-navy,#14213d)}
+.step-n{display:inline-flex;width:2rem;height:2rem;border-radius:999px;align-items:center;justify-content:center;border:1px solid currentColor;font-size:.85rem;margin-right:.6rem}
+.locked{opacity:.45;pointer-events:none}
+#msg{display:none;padding:12px 14px;border-radius:2px;font-size:.9rem}
+.slot.urg{border-color:var(--tp-gold,#b9986a);background:#fbf7ee}
+.slot.urg.sel{background:var(--tp-gold,#b9986a);color:var(--tp-ink,#1a1f1c);border-color:var(--tp-gold,#b9986a)}
+.day.full,.slot.busy{opacity:.45;text-decoration:line-through;cursor:not-allowed;background:transparent}
+</style>
+</head><body>
+
+<header class="border-b line sticky top-0 z-50 bg-[color:var(--tp-paper)]/90 backdrop-blur">
+<nav class="max-w-7xl mx-auto px-6 lg:px-10 h-32 flex items-center justify-between">
+<a href="/index.html" aria-label="Tamburro & Partners Avvocati"><img src="/assets/logo-transparent.png" alt="Tamburro & Partners Avvocati" class="logo-img"></a>
+<div class="hidden lg:flex items-center gap-7">
+<a href="/index.html" class="nav-link">Home</a>
+<a href="/studio.html" class="nav-link">Lo Studio</a>
+<a href="/materie.html" class="nav-link">Materie</a>
+<a href="/insights.html" class="nav-link">Insights</a>
+<a href="/professionisti.html" class="nav-link">Professionisti</a>
+<a href="/prenota.html" class="nav-link active">Prenota</a>
+<a href="/contatti.html" class="nav-link">Contatti</a>
+</div>
+</nav></header>
+
+<section class="hero-bg border-b line">
+<div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
+<div class="eyebrow mb-4">Consulenza</div>
+<h1 class="display text-5xl lg:text-6xl max-w-3xl">Trenta minuti con<br><span class="serif italic gold">l'Avv. Giuseppe Tamburro</span>.</h1>
+<p class="mt-6 max-w-2xl text-[color:var(--tp-ink-2)] leading-relaxed">Scegli giorno e orario, descrivi il quesito e allega i documenti: li leggiamo prima della telefonata, così il tempo serve a darti risposte. La consulenza è con l'Avv. Giuseppe Tamburro, dura 30 minuti, al telefono o in videochiamata, e costa <strong>150 €</strong> tutto compreso (IVA e Cassa Avvocati comprese), da pagare online con PayPal o carta. Se è urgente, con <strong>250 €</strong> puoi avere un orario già occupato o nelle prossime ore.</p>
+</div></section>
+
+<section class="py-16">
+<div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
+<div class="lg:col-span-8 space-y-14">
+
+<!-- STEP 1 -->
+<div id="s1">
+<h2 class="display text-3xl mb-6"><span class="step-n">1</span>Scegli giorno e orario</h2>
+<label id="urgBox" class="flex items-start gap-3 mb-5 p-4 text-sm" style="border:1px solid var(--tp-gold,#b9986a);background:#fbf7ee;cursor:pointer"><input type="checkbox" id="urgente" class="mt-1"><span><strong>È urgente e non puoi aspettare?</strong> Con la consulenza urgente, a <strong>250 €</strong> tutto compreso, puoi scegliere anche gli orari già occupati e quelli delle prossime ore: l'avvocato sposta i suoi impegni per sentirti.</span></label>
+<div id="days" class="flex flex-wrap gap-2 text-sm">Caricamento disponibilità…</div>
+<div id="times" class="flex flex-wrap gap-2 mt-5"></div>
+</div>
+
+<!-- STEP 2 -->
+<form id="s2" class="locked space-y-5" novalidate>
+<h2 class="display text-3xl mb-2"><span class="step-n">2</span>Il quesito e i tuoi dati</h2>
+<div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+<div><label class="eyebrow block mb-2">Materia</label>
+<select name="materia" class="inp"><option value="" selected disabled>Scegli la materia</option><option>Terzo Settore</option><option>Diritto del Lavoro</option><option>Contrattualistica</option><option>Condominio</option><option>Diritto di Famiglia</option><option>Aste Giudiziarie</option><option>Diritto Penale</option><option>Altro / non so</option></select></div>
+<div><label class="eyebrow block mb-2">Il tuo quesito</label>
+<textarea name="quesito" rows="7" class="inp" placeholder="Racconta i fatti principali, le date importanti e cosa vuoi sapere."></textarea></div>
+<div><label class="eyebrow block mb-2">Controparte (se c'è)</label>
+<input name="controparte" class="inp" placeholder="Nome della persona, società o ente con cui c'è la questione"></div>
+<div><label class="eyebrow block mb-2">Documenti</label>
+<input type="file" name="documenti" multiple class="inp" accept=".pdf,.jpg,.jpeg,.png,.heic,.doc,.docx,.odt,.txt,.xls,.xlsx,.eml,.msg,.zip">
+<p class="text-xs text-[color:var(--tp-mute)] mt-2">Fino a 5 file, 15 MB in tutto (PDF, foto, Word, Excel, email).</p></div>
+<div class="grid md:grid-cols-2 gap-5">
+<div><label class="eyebrow block mb-2">Nome e cognome</label><input name="nome" class="inp" autocomplete="name"></div>
+<div><label class="eyebrow block mb-2">Codice fiscale o P.IVA</label><input name="cf" class="inp"></div>
+</div>
+<div><label class="eyebrow block mb-2">Indirizzo (per la fattura)</label><input name="indirizzo" class="inp" autocomplete="street-address" placeholder="Via, numero, CAP, città"></div>
+<div class="grid md:grid-cols-2 gap-5">
+<div><label class="eyebrow block mb-2">Email</label><input type="email" name="email" class="inp" autocomplete="email"></div>
+<div><label class="eyebrow block mb-2">Telefono</label><input name="telefono" class="inp" autocomplete="tel"></div>
+</div>
+<div><label class="eyebrow block mb-2">Come preferisci sentirci</label>
+<div class="flex gap-6 text-sm"><label><input type="radio" name="modalita" value="Telefono" checked> Telefono</label><label><input type="radio" name="modalita" value="Videochiamata"> Videochiamata</label></div></div>
+<div class="flex items-start gap-3 text-sm text-[color:var(--tp-mute)]"><input type="checkbox" class="mt-1" name="privacy"><span>Ho letto l'informativa privacy ex Reg. UE 2016/679 e acconsento al trattamento dei dati e dei documenti per lo svolgimento della consulenza.</span></div>
+<div class="flex items-start gap-3 text-sm text-[color:var(--tp-mute)]"><input type="checkbox" class="mt-1" name="condizioni"><span>Accetto che la consulenza duri 30 minuti al costo di 150 € tutto compreso, oppure 250 € se scelgo la consulenza urgente (IVA e Cassa Avvocati comprese), per cui riceverò regolare fattura. Se l'avvocato non può seguire la questione, ad esempio per conflitto di interessi, l'importo viene rimborsato per intero. L'appuntamento si può spostare scrivendo a g.tamburro@tamburropartners.com almeno 24 ore prima.</span></div>
+<button type="submit" class="btn-primary">Continua al pagamento</button>
+</form>
+
+<!-- STEP 3 -->
+<div id="s3" class="locked">
+<h2 class="display text-3xl mb-6"><span class="step-n">3</span>Pagamento</h2>
+<p id="recap" class="mb-6 text-[color:var(--tp-ink-2)]"></p>
+<div id="pay" style="max-width:420px"></div>
+</div>
+
+<div id="msg" role="status"></div>
+
+<!-- DONE -->
+<div id="done" style="display:none" class="bg-white p-10 border line">
+<div class="eyebrow mb-3">Prenotazione confermata</div>
+<h2 class="display text-4xl mb-4">Grazie, ci sentiamo <span id="doneWhen" class="serif italic gold"></span>.</h2>
+<p class="text-[color:var(--tp-ink-2)] leading-relaxed">Ti abbiamo inviato una email di conferma. Leggeremo il quesito e i documenti prima dell'appuntamento. Se trovi altri documenti utili, puoi inviarli rispondendo a quella email.</p>
+</div>
+
+</div>
+<aside class="lg:col-span-4">
+<div class="bg-white p-8 border line lg:sticky lg:top-40">
+<div class="eyebrow mb-3">Come funziona</div>
+<ol class="text-sm leading-relaxed space-y-3 text-[color:var(--tp-ink-2)]">
+<li><strong>1.</strong> Scegli un orario libero.</li>
+<li><strong>2.</strong> Scrivi il quesito e allega i documenti.</li>
+<li><strong>3.</strong> Paga 150 € con PayPal o carta (250 € se urgente).</li>
+<li><strong>4.</strong> Ricevi la conferma via email; all'orario fissato ti chiamiamo noi.</li>
+</ol>
+<div class="mt-6 pt-6 border-t line text-sm space-y-1">
+<div><strong>T.</strong> 0823 266443</div>
+<div><strong>E.</strong> g.tamburro@tamburropartners.com</div>
+<div><strong>P.IVA</strong> 04938810613</div>
+</div>
+</div>
+</aside>
+</div></section>
+
+<footer class="navy-bg py-10">
+<div class="max-w-7xl mx-auto px-6 lg:px-10 text-sm opacity-70">© 2026 Tamburro &amp; Partners Avvocati</div>
+</footer>
+
+<script>
+(function(){
+  var API='/api/booking';
+  var TEST=new URLSearchParams(location.search).get('k')||'';
+  var H=TEST?{'x-tp-test':TEST}:{};
+  var state={slot:null,id:null,days:[]};
+  var $=function(id){return document.getElementById(id)};
+  var msg=$('msg');
+  function show(t,ok){msg.style.display=t?'block':'none';msg.textContent=t||'';msg.style.background=ok?'#eef7ee':'#fbeaea';msg.style.color=ok?'#256029':'#8a1f1f';if(t)msg.scrollIntoView({behavior:'smooth',block:'center'});}
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
+
+  var URG=false;
+  function price(){return URG?250:150;}
+  function isUrgSlot(){return state.slotUrg;}
+  function loadSlots(){
+    fetch(API+'/slots',{headers:H}).then(function(r){return r.json()}).then(function(d){
+      state.days=d.days||[];var box=$('days');box.innerHTML='';$('times').innerHTML='';state.slot=null;
+      if(!state.days.some(function(x){return !x.full||(URG&&(x.urg||[]).length)})){box.textContent='Al momento non ci sono orari liberi. Scrivici a g.tamburro@tamburropartners.com.';return;}
+      state.days.forEach(function(day){
+        var full=URG?!(day.times.length+(day.urg||[]).length):day.full;
+        var b=el('button','day'+(full?' full':''),day.label.replace(/ \d{4}$/,''));b.type='button';
+        if(full){b.disabled=true;b.title='Giornata al completo';box.appendChild(b);return;}
+        b.onclick=function(){document.querySelectorAll('.day').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');renderTimes(day);};
+        box.appendChild(b);
+      });
+    }).catch(function(){$('days').textContent='Impossibile caricare gli orari. Riprova tra poco.';});
+  }
+  function renderTimes(day){
+    var box=$('times');box.innerHTML='';
+    var busy=(day.busy||[]).slice(),urg=day.urg||[];
+    if(!URG)busy=busy.concat(urg);
+    day.times.concat(busy,URG?urg:[]).sort().forEach(function(t){
+      var b=el('button','slot',t);b.type='button';
+      if(busy.indexOf(t)>=0){b.className='slot busy';b.disabled=true;b.title='Già prenotato';box.appendChild(b);return;}
+      var u=urg.indexOf(t)>=0;if(u){b.className='slot urg';b.title='Solo consulenza urgente';}
+      b.onclick=function(){document.querySelectorAll('.slot').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');
+        state.slot=day.date+'T'+t;state.slotUrg=u;state.label=day.label+', ore '+t;$('s2').classList.remove('locked');show('');};
+      box.appendChild(b);
+    });
+  }
+
+  $('urgente').addEventListener('change',function(){URG=this.checked;
+    $('s2').classList.add('locked');loadSlots();});
+  $('s2').addEventListener('submit',function(e){
+    e.preventDefault();var f=e.target;
+    if(!state.slot){show('Scegli prima giorno e orario.');return;}
+    var need=['materia','quesito','nome','cf','indirizzo','email','telefono'];
+    for(var i=0;i<need.length;i++){if(!f[need[i]].value.trim()){show('Compila tutti i campi: manca «'+f[need[i]].previousElementSibling.textContent+'».');f[need[i]].focus();return;}}
+    if(f.quesito.value.trim().length<30){show('Descrivi il quesito con qualche riga in più.');return;}
+    var files=f.documenti.files,tot=0;for(var k=0;k<files.length;k++)tot+=files[k].size;
+    if(files.length>5){show('Puoi caricare al massimo 5 documenti.');return;}
+    if(tot>15*1024*1024){show('I documenti superano 15 MB complessivi.');return;}
+    if(!f.privacy.checked||!f.condizioni.checked){show("Per continuare accetta l'informativa privacy e le condizioni.");return;}
+    var fd=new FormData(f);fd.append('slot',state.slot);if(state.slotUrg)fd.append('urgente','1');
+    var btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='Invio in corso…';show('');
+    fetch(API+'/start',{method:'POST',headers:H,body:fd}).then(function(r){return r.json()}).then(function(d){
+      if(!d.ok){show(d.error||'Errore, riprova.');if(d.slotTaken)loadSlots();return;}
+      state.id=d.id;f.classList.add('locked');document.getElementById('s1').classList.add('locked');
+      state.price=state.slotUrg?250:150;$('recap').textContent='Consulenza '+(state.slotUrg?'urgente ':'')+'di 30 minuti: '+state.label+' — '+state.price+' € tutto compreso. L\'orario resta riservato per 20 minuti.';
+      $('s3').classList.remove('locked');initPay();$('s3').scrollIntoView({behavior:'smooth'});
+    }).catch(function(){show('Connessione non riuscita, riprova.');})
+    .finally(function(){btn.disabled=false;btn.textContent='Continua al pagamento';});
+  });
+
+  function post(path,body){return fetch(API+path,{method:'POST',headers:Object.assign({'Content-Type':'application/json'},H),body:JSON.stringify(body)}).then(function(r){return r.json()});}
+  function createOrder(){return post('/order',{id:state.id}).then(function(d){if(!d.ok)throw new Error(d.error);return d.orderID;});}
+  function capture(orderID){
+    show('Conferma del pagamento in corso…',true);
+    return post('/capture',{id:state.id,orderID:orderID}).then(function(d){
+      if(!d.ok){show(d.error||'Pagamento non riuscito.');return;}
+      show('');['s1','s2','s3'].forEach(function(x){$(x).style.display='none'});
+      $('doneWhen').textContent=d.when;$('done').style.display='block';$('done').scrollIntoView({behavior:'smooth'});
+      if(window.fbq)fbq('track','Purchase',{value:(state.price||150),currency:'EUR'});
+    });
+  }
+  function initPay(){
+    fetch(API+'/config',{headers:H}).then(function(r){return r.json()}).then(function(c){
+      var box=$('pay');box.innerHTML='';
+      if(c.mode==='off'){box.textContent='I pagamenti online saranno attivi a breve. Per prenotare scrivici a g.tamburro@tamburropartners.com.';return;}
+      if(c.mode==='mock'){
+        var b=el('button','btn-primary','Paga '+(state.price||150)+' € (TEST simulato)');b.type='button';
+        b.onclick=function(){b.disabled=true;createOrder().then(capture).catch(function(e){show(e.message);b.disabled=false;});};
+        box.appendChild(b);return;
+      }
+      if(c.mode==='standard'){
+        var p=el('button','btn-primary','Paga '+(state.price||150)+' € con PayPal o carta');p.type='button';
+        var note=el('p','text-xs text-[color:var(--tp-mute)] mt-3','Verrai portato sulla pagina sicura di PayPal. Puoi pagare anche con carta, senza conto PayPal. Al termine tornerai qui per la conferma.');
+        p.onclick=function(){p.disabled=true;p.textContent='Apertura di PayPal…';
+          post('/order',{id:state.id}).then(function(d){if(!d.ok)throw new Error(d.error);location.href=d.redirect;})
+          .catch(function(e){show(e.message||'Errore, riprova.');p.disabled=false;p.textContent='Paga '+(state.price||150)+' € con PayPal o carta';});};
+        box.appendChild(p);box.appendChild(note);return;
+      }
+      var s=document.createElement('script');
+      s.src='https://www.paypal.com/sdk/js?client-id='+encodeURIComponent(c.clientId)+'&currency=EUR&intent=capture&locale=it_IT';
+      s.onload=function(){
+        paypal.Buttons({style:{layout:'vertical',color:'gold',shape:'rect',label:'pay'},
+          createOrder:function(){return createOrder().catch(function(e){show(e.message);throw e;});},
+          onApprove:function(data){return capture(data.orderID);},
+          onError:function(){show('Il pagamento non è andato a buon fine. Riprova o scrivici a g.tamburro@tamburropartners.com.');}
+        }).render('#pay');
+      };
+      s.onerror=function(){show('Impossibile caricare PayPal. Ricarica la pagina.');};
+      document.head.appendChild(s);
+    });
+  }
+  function showDone(when){['s1','s2','s3'].forEach(function(x){$(x).style.display='none'});
+    $('doneWhen').textContent=when;$('done').style.display='block';$('done').scrollIntoView({behavior:'smooth'});}
+  var qs=new URLSearchParams(location.search);
+  if(qs.get('esito')==='ok'&&qs.get('id')){
+    ['s1','s2','s3'].forEach(function(x){$(x).style.display='none'});
+    show('Stiamo ricevendo la conferma del pagamento da PayPal…',true);
+    var tries=0;(function poll(){
+      fetch(API+'/status?id='+encodeURIComponent(qs.get('id'))).then(function(r){return r.json()}).then(function(d){
+        if(d.status==='pagata'){show('');showDone(d.when);if(window.fbq)fbq('track','Purchase',{value:(state.price||150),currency:'EUR'});return;}
+        if(++tries<20){setTimeout(poll,3000);return;}
+        show('Pagamento ricevuto da PayPal, la conferma arriverà via email entro pochi minuti. Per qualsiasi dubbio scrivici a g.tamburro@tamburropartners.com.',true);
+      }).catch(function(){if(++tries<20)setTimeout(poll,3000);});
+    })();
+  } else {
+    if(qs.get('esito')==='annullato')show('Pagamento annullato: nessun addebito. Puoi scegliere di nuovo l\'orario e riprovare.');
+    loadSlots();
+  }
+})();
+</script>
+</body></html>
